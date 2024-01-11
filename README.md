@@ -5,10 +5,11 @@
 
 ## 2. Create a .NET8 WebAPI and create the Dockerfile
 
+Run Visual Studio 2022 Community Edition and create a .NET8 WebAPI
 
+Add Docker support to the application 
 
-
-This is the Dockerfile source code:
+This is the Dockerfile created automatically:
 
 ```
 #See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
@@ -40,7 +41,7 @@ ENTRYPOINT ["dotnet", "GoogleCloudWebAPI.dll"]
 
 ## 3. Create the Docker image
 
-
+Open Terminal window and create the Docker image running this command:
 
 ```
 docker build -t your-webapi-image-name .
@@ -55,6 +56,14 @@ my-gcloud-project: extreme-axon-381209
 my-repo: myfirstrepo
 
 my-imagename: your-webapi-image-name:v1.0
+
+Original imagename:myimagename:latest
+
+Final imagename:my-location-docker.pkg.dev/my-gcloud-project/my-repo/my-imagename:v1.0
+
+```
+docker tag myimagename:latest my-location-docker.pkg.dev/my-gcloud-project/my-repo/my-imagename:v1.0
+```
 
 ```
 docker tag your-webapi-image-name:latest europe-southwest1-docker.pkg.dev/extreme-axon-381209/myfirstrepo/your-webapi-image-name:v1.0
