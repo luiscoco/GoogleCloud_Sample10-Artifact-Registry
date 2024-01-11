@@ -38,7 +38,7 @@ COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "GoogleCloudWebAPI.dll"]
 ```
 
-## 2. Create the Docker image
+## 3. Create the Docker image
 
 
 
@@ -46,7 +46,7 @@ ENTRYPOINT ["dotnet", "GoogleCloudWebAPI.dll"]
 docker build -t your-webapi-image-name .
 ```
 
-## 3. Tag the Docker imge
+## 4. Tag the Docker imge
 
 my-location: europe-southwest1
 
@@ -60,9 +60,9 @@ my-imagename: your-webapi-image-name:v1.0
 docker tag your-webapi-image-name:latest europe-southwest1-docker.pkg.dev/extreme-axon-381209/myfirstrepo/your-webapi-image-name:v1.0
 ```
 
-## 4. Push the Docker image to Google Cloud Artifact Registry repo
+## 5. Push the Docker image to Google Cloud Artifact Registry repo
 
-### 4.1. Authenticate gcloud:
+### 5.1. Authenticate gcloud:
 
 Make sure you're authenticated with the Google Cloud SDK and that you're using the correct project. Run:
 
@@ -74,7 +74,7 @@ gcloud auth login
 gcloud config set project extreme-axon-381209
 ```
 
-### 4.2. Configure Docker to Use gcloud as a Credential Helper:
+### 5.2. Configure Docker to Use gcloud as a Credential Helper:
 
 Run the following command to configure Docker to use gcloud as the credential helper:
 
@@ -84,13 +84,13 @@ gcloud auth configure-docker europe-southwest1-docker.pkg.dev
 
 This command updates your Docker configuration to use gcloud as the credential helper for repositories in europe-southwest1-docker.pkg.dev
 
-### 4.3. Push Docker image to Google Cloud Artifact Registry repo
+### 5.3. Push Docker image to Google Cloud Artifact Registry repo
 
 ```
 docker push europe-southwest1-docker.pkg.dev/extreme-axon-381209/myfirstrepo/your-webapi-image-name:v1.0
 ```
 
-## 4.4. Veryfy the Google Cloud Docker image in Docker Desktop
+## 5.4. Veryfy the Google Cloud Docker image in Docker Desktop
 
 We pull the Docker image from Google Cloud Artifact Registry repo
 
@@ -108,9 +108,9 @@ http://localhost:8080/weatherforecast
 
 ![image](https://github.com/luiscoco/GoogleCloud_Sample10-Artifact-Registry/assets/32194879/57553f3b-04b2-4baf-8603-1747b07ad527)
 
-## 5. Deploying the Docker image
+## 6. Deploying the Docker image
 
 ```
-gcloud run deploy --image gcr.io/your-project-id/your-image-name
+gcloud run deploy --image europe-southwest1-docker.pkg.dev/extreme-axon-381209/myfirstrepo/your-webapi-image-name:v1.0
 ```
 
