@@ -3,22 +3,62 @@
 ## 1. Create a Google Cloud Artifact Registry repo
 
 
+## 2. Create a .NET8 WebAPI and create the Dockerfile
+
+
+
+
+This is the Dockerfile source code:
+
+```
+#See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
+
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+USER app
+WORKDIR /app
+EXPOSE 8080
+EXPOSE 8081
+
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+ARG BUILD_CONFIGURATION=Release
+WORKDIR /src
+COPY ["GoogleCloudWebAPI.csproj", "."]
+RUN dotnet restore "./././GoogleCloudWebAPI.csproj"
+COPY . .
+WORKDIR "/src/."
+RUN dotnet build "./GoogleCloudWebAPI.csproj" -c $BUILD_CONFIGURATION -o /app/build
+
+FROM build AS publish
+ARG BUILD_CONFIGURATION=Release
+RUN dotnet publish "./GoogleCloudWebAPI.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "GoogleCloudWebAPI.dll"]
+```
 
 ## 2. Create the Docker image
 
 
+
+```
+docker build -t your-webapi-image-name .
+```
+
 ## 3. Tag the Docker imge
 
-my-location:
+my-location: europe-southwest1
 
-my-gcloud-project:
+my-gcloud-project: extreme-axon-381209
 
-my-repo: 
+my-repo: myfirstrepo
+
+my-imagename: your-webapi-image-name:v1.0
 
 ```
-docker tag myapp us-central1-docker.pkg.dev/my-gcloud-project/my-repo/myapp:v1.0
+docker tag your-webapi-image-name:latest europe-southwest1-docker.pkg.dev/extreme-axon-381209/myfirstrepo/your-webapi-image-name:v1.0
 ```
-
 
 ## 4. Push the Docker image to Google Cloud Artifact Registry repo
 
@@ -61,8 +101,12 @@ docker pull europe-southwest1-docker.pkg.dev/extreme-axon-381209/myfirstrepo/you
 We run the Docker image in Docker Destop
 
 ```
-
+docker run -p 8080:8080 -p 8081:8081 europe-southwest1-docker.pkg.dev/extreme-axon-381209/myfirstrepo/your-webapi-image-name:v1.0
 ```
+
+http://localhost:8080/weatherforecast
+
+![image](https://github.com/luiscoco/GoogleCloud_Sample10-Artifact-Registry/assets/32194879/57553f3b-04b2-4baf-8603-1747b07ad527)
 
 ## 5. Deploying the Docker image
 
