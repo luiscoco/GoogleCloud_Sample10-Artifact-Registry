@@ -47,7 +47,21 @@ This command updates your Docker configuration to use gcloud as the credential h
 ### 4.3. Push Docker image to Google Cloud Artifact Registry repo
 
 ```
-docker push gcr.io/your-project-id/your-image-name
+docker push europe-southwest1-docker.pkg.dev/extreme-axon-381209/myfirstrepo/your-webapi-image-name:v1.0
+```
+
+## 4.4. Veryfy the Google Cloud Docker image in Docker Desktop
+
+We pull the Docker image from Google Cloud Artifact Registry repo
+
+```
+docker pull europe-southwest1-docker.pkg.dev/extreme-axon-381209/myfirstrepo/your-webapi-image-name:v1.0
+```
+
+We run the Docker image in Docker Destop
+
+```
+
 ```
 
 ## 5. Deploying the Docker image
