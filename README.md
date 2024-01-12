@@ -1,4 +1,4 @@
-# How to create .NET8 WebAPI and store the Docker image in my Google Cloud Artifact Registry
+# How to create .NET8 WebAPI Docker image and upload it to Google Cloud Artifact Registry
 
 ## 1. Create a Google Cloud Artifact Registry repo
 
