@@ -41,7 +41,10 @@ We can verify the new repo in the Artifact Registry list
 
 ![image](https://github.com/luiscoco/GoogleCloud_Sample10-Artifact-Registry/assets/32194879/c719e321-8925-41d7-b841-a13aa714518b)
 
-To 
+To Set Up the repo we select it and we press in the **Setup Instructions** button
+
+![image](https://github.com/luiscoco/GoogleCloud_Sample10-Artifact-Registry/assets/32194879/f194299c-f081-4f3b-907d-f4b31c788d78)
+
 
 ## 2. Create a .NET8 WebAPI and create the Dockerfile
 
