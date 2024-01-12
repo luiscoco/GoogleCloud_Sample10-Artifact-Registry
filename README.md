@@ -21,6 +21,20 @@ This command will check for the latest version and update the SDK components as 
 
 Now we can create a new Artifact Registry repo in Coogle Cloud
 
+We log in to Google Cloud console and we search for **Artifact Registry** 
+
+![image](https://github.com/luiscoco/GoogleCloud_Sample10-Artifact-Registry/assets/32194879/bfe25a1c-f9f0-460b-b170-2ad0311403b7)
+
+We enable the Artifact Registry API 
+
+We create a new repo
+
+![image](https://github.com/luiscoco/GoogleCloud_Sample10-Artifact-Registry/assets/32194879/a8f5363e-eded-4a1d-837d-e54dd9b1961c)
+
+We input the new repo data
+
+![image](https://github.com/luiscoco/GoogleCloud_Sample10-Artifact-Registry/assets/32194879/2076eb96-3a0b-4b97-86cc-6878d3aac282)
+
 
 
 ## 2. Create a .NET8 WebAPI and create the Dockerfile
