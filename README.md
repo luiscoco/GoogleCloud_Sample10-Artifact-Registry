@@ -35,7 +35,13 @@ We input the new repo data
 
 ![image](https://github.com/luiscoco/GoogleCloud_Sample10-Artifact-Registry/assets/32194879/2076eb96-3a0b-4b97-86cc-6878d3aac282)
 
+![image](https://github.com/luiscoco/GoogleCloud_Sample10-Artifact-Registry/assets/32194879/34292bcc-844b-42f0-a1e4-3405f2809730)
 
+We can verify the new repo in the Artifact Registry list
+
+![image](https://github.com/luiscoco/GoogleCloud_Sample10-Artifact-Registry/assets/32194879/c719e321-8925-41d7-b841-a13aa714518b)
+
+To 
 
 ## 2. Create a .NET8 WebAPI and create the Dockerfile
 
