@@ -45,6 +45,13 @@ To Set Up the repo we select it and we press in the **Setup Instructions** butto
 
 ![image](https://github.com/luiscoco/GoogleCloud_Sample10-Artifact-Registry/assets/32194879/f194299c-f081-4f3b-907d-f4b31c788d78)
 
+See the command to Set Up our repo
+
+![image](https://github.com/luiscoco/GoogleCloud_Sample10-Artifact-Registry/assets/32194879/983df5d7-a341-4f0d-a1c5-1c4efbd88a1e)
+
+```
+gcloud auth configure-docker europe-southwest1-docker.pkg.dev
+```
 
 ## 2. Create a .NET8 WebAPI and create the Dockerfile
 
