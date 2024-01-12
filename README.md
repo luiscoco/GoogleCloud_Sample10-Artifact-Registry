@@ -2,15 +2,26 @@
 
 ## 1. Create a Google Cloud Artifact Registry repo
 
-Initialize gcloud: Run the command **gcloud init**.
+To initialize gcloud run the command:
+
+```
+gcloud init
+```
 
 This will guide you through the initialization process, where you'll log in to your Google account, set your default project, and choose a default compute zone/region if necessary.
 
-Update gcloud: After initialization, you can update the Google Cloud SDK to the latest version by running **gcloud components update**.
+
+To update gcloud after initialization, you can update the Google Cloud SDK to the latest version by running the command:
+
+```
+gcloud components update
+```
 
 This command will check for the latest version and update the SDK components as needed.
 
-We create 
+Now we can create a new Artifact Registry repo in Coogle Cloud
+
+
 
 ## 2. Create a .NET8 WebAPI and create the Dockerfile
 
