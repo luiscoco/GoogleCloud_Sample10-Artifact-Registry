@@ -116,7 +116,7 @@ docker tag myimagename:latest my-location-docker.pkg.dev/my-gcloud-project/my-re
 ```
 
 ```
-docker tag your-webapi-image-name:latest europe-southwest1-docker.pkg.dev/extreme-axon-381209/myfirstrepo/your-webapi-image-name:v1.0
+docker tag myimagename:latest europe-southwest1-docker.pkg.dev/extreme-axon-381209/myfirstrepo/myimagename:v1.0
 ```
 
 ## 5. Push the Docker image to Google Cloud Artifact Registry repo
