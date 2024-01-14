@@ -94,7 +94,7 @@ ENTRYPOINT ["dotnet", "GoogleCloudWebAPI.dll"]
 Open Terminal window and create the Docker image running this command:
 
 ```
-docker build -t your-webapi-image-name .
+docker build -t myimagename .
 ```
 
 ## 4. Tag the Docker imge
